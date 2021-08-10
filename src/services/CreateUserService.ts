@@ -1,8 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { hash } from "bcryptjs";
 
-const prisma = new PrismaClient();
-
 interface IUserRequest {
   username: string;
   email: string;
@@ -10,7 +8,8 @@ interface IUserRequest {
 }
 
 class CreateUserService {
-  async handle({username, email, password}: IUserRequest) {
+  async execute({username, email, password}: IUserRequest) {
+    const prisma = new PrismaClient();
 
     if (!username) {
       throw new Error("Invalid username")
