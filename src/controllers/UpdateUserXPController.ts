@@ -7,9 +7,9 @@ class UpdateUserXPController {
 
     const updateUserXPService = new UpdateUserXPService();
 
-    const user = await updateUserXPService.execute({ userId, xp });
+    const userXp = await updateUserXPService.execute({ userId, xp });
     
-    response.json(user);
+    response.json(userXp);
   }
 }
 
