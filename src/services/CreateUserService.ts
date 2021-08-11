@@ -31,13 +31,13 @@ class CreateUserService {
 
     const passwordHash = await hash(password, 8);
 
-    const user = prisma.user.create({
+    const user = await prisma.user.create({
       data: {
         username,
         email,
         password: passwordHash
       }
-    })
+    });
 
     return user;
   }

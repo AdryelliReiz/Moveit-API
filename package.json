@@ -9,6 +9,7 @@
   "dependencies": {
     "@prisma/client": "^2.28.0",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "global": "^4.4.0",
     "jsonwebtoken": "^8.5.1",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/node": "^16.4.13",

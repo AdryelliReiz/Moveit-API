@@ -8,8 +8,8 @@ class CreateUserController {
     const createUserService = new CreateUserService();
 
     const user = await createUserService.execute({ username, email, password });
-    
-    return response.json(user);
+
+    response.json(user);
   }
 }
 
