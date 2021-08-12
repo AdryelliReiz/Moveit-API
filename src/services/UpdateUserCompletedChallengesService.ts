@@ -18,11 +18,11 @@ class UpdateUserCompletedChallengesService {
       }
     });
 
-    const userLevel = {
-      level: user.level
+    const userCompletedChallenges = {
+      completedChallenges: user.completedChallenges
     };
 
-    return userLevel;
+    return userCompletedChallenges;
   }
 }
 

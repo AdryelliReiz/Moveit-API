@@ -2,6 +2,7 @@ import { Router } from "express";
 import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
 import { CreateUserController } from "./controllers/CreateUserController";
 import { ListUserDataController } from "./controllers/ListUserDataController";
+import { ListUsersRankingController } from "./controllers/ListUsersRankingController";
 import { UpdateUserCompletedChallengesController } from "./controllers/UpdateUserCompletedChallengesController";
 import { UpdateUserLevelController } from "./controllers/UpdateUserLevelController";
 import { UpdateUserXPController } from "./controllers/UpdateUserXPController";
@@ -15,12 +16,15 @@ const listUserDataController = new ListUserDataController();
 const updateUserXPController = new UpdateUserXPController();
 const updateUserLevelController = new UpdateUserLevelController();
 const updateUserCompletedChallengesController = new UpdateUserCompletedChallengesController();
+const listUsersRankingController = new ListUsersRankingController();
 
 router.post("/user", createUserController.handle);
 
 router.post("/user/authenticate", authenticateUserController.handle);
 
 router.get("/user", ensureAuthenticateUser, listUserDataController.handle);
+
+router.get("/users/ranking", ensureAuthenticateUser, listUsersRankingController.handle)
 
 router.put("/user/completed-challenges", ensureAuthenticateUser, updateUserCompletedChallengesController.handle);
 

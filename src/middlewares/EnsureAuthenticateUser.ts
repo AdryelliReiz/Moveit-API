@@ -22,7 +22,7 @@ export function ensureAuthenticateUser(
     try {
         const { sub } = verify(token, "3871e895063b5f4c13c8f90f1b0baf39") as IPayload;
         request.user_id = sub;
-
+        
         return next();
     } catch (error) {
         return response.status(401).end();
