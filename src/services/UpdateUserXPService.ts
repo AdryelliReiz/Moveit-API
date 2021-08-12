@@ -2,7 +2,7 @@ import { PrismaClient } from ".prisma/client";
 
 interface IUpdateXP {
   userId: string;
-  xp: string;
+  xp: number;
 }
 
 class UpdateUserXPService {
@@ -14,7 +14,7 @@ class UpdateUserXPService {
         id: parseInt(userId)
       },
       data: {
-        xp
+        xp: xp
       }
     });
 

@@ -3,7 +3,8 @@ import { UpdateUserXPService } from "../services/UpdateUserXPService";
 
 class UpdateUserXPController {
   async handle(request: Request, response: Response) {
-    const { userId, xp } = request.body;
+    const { xp } = request.body;
+    const userId = request.user_id;
 
     const updateUserXPService = new UpdateUserXPService();
 

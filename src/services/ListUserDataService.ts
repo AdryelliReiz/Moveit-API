@@ -16,6 +16,7 @@ class ListUserDataService {
 
     const user = {
       username: userFind.username,
+      completedChallenges: userFind.completedChallenges,
       level: userFind.level,
       xp: userFind.xp
     }

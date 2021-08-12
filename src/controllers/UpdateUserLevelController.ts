@@ -3,7 +3,8 @@ import { UpdateUserLevelService } from "../services/UpdateUserLevelService";
 
 class UpdateUserLevelController {
   async handle(request: Request, response: Response) {
-    const { userId, level } = request.body;
+    const { level } = request.body;
+    const userId = request.user_id;
 
     const updateUserLevelService = new UpdateUserLevelService();
 
