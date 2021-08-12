@@ -4,13 +4,14 @@ import { UpdateUserLevelService } from "../services/UpdateUserLevelService";
 
 class UpdateUserCompletedChallengesController {
   async handle(request: Request, response: Response) {
-    const { userId, completedChallenges } = request.body;
+    const { completedChallenges } = request.body;
+    const userId = request.user_id;
 
     const updateUserCompletedChallengesService = new UpdateUserCompletedChallengesService();
 
-    const userLevel = await updateUserCompletedChallengesService.execute({ userId, completedChallenges});
+    const userCompletedChallenges = await updateUserCompletedChallengesService.execute({ userId, completedChallenges});
 
-    response.json(userLevel);
+    response.json(userCompletedChallenges);
   }
 }
 
