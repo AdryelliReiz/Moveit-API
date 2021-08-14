@@ -2,7 +2,7 @@ import { PrismaClient } from ".prisma/client";
 
 interface IUpdateXP {
   userId: string;
-  completedChallenges: string;
+  completedChallenges: number;
 }
 
 class UpdateUserCompletedChallengesService {
