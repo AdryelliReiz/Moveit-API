@@ -2,7 +2,7 @@ import { PrismaClient } from ".prisma/client";
 
 interface IUpdateXP {
   userId: string;
-  level: string;
+  level: number;
 }
 
 class UpdateUserLevelService {
