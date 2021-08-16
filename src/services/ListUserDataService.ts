@@ -18,7 +18,8 @@ class ListUserDataService {
       username: userFind.username,
       completedChallenges: userFind.completedChallenges,
       level: userFind.level,
-      xp: userFind.xp
+      xp: userFind.xp,
+      currentXP: userFind.currentXP
     }
 
     return user;
