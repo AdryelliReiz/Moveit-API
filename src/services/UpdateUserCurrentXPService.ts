@@ -2,11 +2,11 @@ import { PrismaClient } from ".prisma/client";
 
 interface IUpdateXP {
   userId: string;
-  level: number;
+  currentXP: number;
 }
 
-class UpdateUserLevelService {
-  async execute({userId, level}: IUpdateXP) {
+class UpdateUserCurrentXPService {
+  async execute({userId, currentXP}: IUpdateXP) {
     const prisma = new PrismaClient();
 
     try {
@@ -15,20 +15,20 @@ class UpdateUserLevelService {
           id: parseInt(userId)
         },
         data: {
-          level
+          currentXP
         }
       });
 
-      const userLevel = {
-      level: user.level
+      const userCurrentXP = {
+      currentXP: user.currentXP
     };
 
-    return userLevel;
+    return userCurrentXP;
     } catch (err) {
-      throw new Error('Fail to updated level user!')
+      throw new Error('Fail to updated current xp user!')
     }
     
   }
 }
 
-export { UpdateUserLevelService };
+export { UpdateUserCurrentXPService };
