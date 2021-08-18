@@ -3,13 +3,17 @@ import { AuthenticateUserService } from "../services/AuthenticateUserService";
 
 class AuthenticateUserController {
   async handle(request: Request, response: Response) {
-    const { email, password } = request.body;
+    try {
+      const { email, password } = request.body;
 
-    const authenticateUserService = new AuthenticateUserService();
+      const authenticateUserService = new AuthenticateUserService();
 
-    const token = await authenticateUserService.execute({ email, password });
+      const token = await authenticateUserService.execute({ email, password });
 
-    response.json(token)
+      response.json(token)
+    } catch (err) {
+      response.status(401).json('Email/senha incorretos');
+    }
   }
 }
 
